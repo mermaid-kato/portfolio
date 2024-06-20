@@ -1,37 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { Portfolios } from './Portfolios';
+import { Careers } from './Careers';
+import styled from 'styled-components';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <div className="App-portfolio">
-        <h1 className="Portfolio-title">Profile</h1>
-        <div className="Portfolio-name">まめかと（氏名）</div>
-        <div className="Portfolio-group">
-          <div className="Portfolio-image"></div>
-          <div className="Portfolio-group2">
-            <div className="Portfolio-birthday">生年月日：1998年10月19日</div>
-            <div className="Portfolio-language">使用言語：Ruby、Javascript、etc...</div>
-            <div className="Portfolio-thing">ひとこと：やる気だけはあります！！</div>
-          </div>
-        </div>
-      </div>
-      <div className="App-career">
-        <h1 className="Career-title">Career</h1>
-        <div className="Career-group">
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-          <div className="Career-pj">199x年：xxxプロジェクトに従事</div>
-        </div>
-      </div>
+      <Header></Header>
+      <Portfolios/>
+      <Careers/>
     </div>
   );
 }
+
+const Header = styled.div`
+  background-color: #28293E;
+  min-height: 80px;
+`;
 
 export default App;
