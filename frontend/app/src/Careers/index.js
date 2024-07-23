@@ -1,17 +1,43 @@
+import styled from 'styled-components';
+
 export const Careers = () => {
   return (
-    <div className="App-career">
-      <h1 className="Career-title">Career</h1>
-      <div className="Career-group">
-        <div className="Career-pj">2001年：xxxプロジェクトに従事</div>
-        <div className="Career-pj">2002年：xxxプロジェクトに従事</div>
-        <div className="Career-pj">2003年：xxxプロジェクトに従事</div>
-        <div className="Career-pj">2004年：xxxプロジェクトに従事</div>
-        <div className="Career-pj">2005年：xxxプロジェクトに従事</div>
-        <div className="Career-pj">2006年：xxxプロジェクトに従事</div>
-        <div className="Career-pj">2007年：xxxプロジェクトに従事</div>
-        <div className="Career-pj">2008年：xxxプロジェクトに従事</div>
-      </div>
-    </div>
+    <AppCareer>
+      <CareerTitle>Career</CareerTitle>
+      <CareerGroup>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+        <CareerPj>2001年：xxxプロジェクトに従事</CareerPj>
+      </CareerGroup>
+    </AppCareer>
   );
 };
+
+const AppCareer = styled.div`
+  background-color: white;
+`;
+
+const CareerTitle = styled.h1`
+  margin: 0px;
+  max-width: 100%;
+  margin-left: 15px;
+  font-size: 2.5em;
+`;
+
+const CareerGroup = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const CareerPj = styled.div`
+  text-align: center;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+`;
