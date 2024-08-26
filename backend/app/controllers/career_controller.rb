@@ -33,8 +33,8 @@ class CareerController < ApplicationController
         year: "2007年",
         title: "AWSの構築作業"
       }
-    ]
+    ].to_json
 
-    render json: careers.to_json
+    render json: careers
   end
 end

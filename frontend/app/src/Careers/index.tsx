@@ -1,6 +1,28 @@
 import styled from 'styled-components';
+import axios from 'axios'
+import { useEffect, useState } from 'react';
+
 
 export const Careers = () => {
+  const [userData, setUserData] = useState([ { year: null, title: null }]);
+  // const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3001/career', {
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          withCredentials: true,
+        });
+        setUserData(response.data);
+      } catch (error) {
+        console.error('データの取得に失敗しました:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const careerItems = [
     {
       year: "2000年",
