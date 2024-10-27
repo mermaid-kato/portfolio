@@ -20,7 +20,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./backend:/myapp
+      - ./backend:/rails/
       - bundle:/usr/local/bundle
     command: bash -c "rm -rf tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     depends_on:
@@ -35,7 +35,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend:/usr/src/app
-    command: sh -c "cd app && npm install && npm start"
+    command: sh -c "cd app && npm install typescript && npm install styled-components && npm install axios && npm install && npm start"
     ports:
       - "3000:3000"
 volumes:
