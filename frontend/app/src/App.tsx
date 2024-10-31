@@ -1,4 +1,4 @@
-import './App.css';
+import React from 'react';
 import { Portfolios } from './Portfolios';
 import { Careers } from './Careers';
 import styled from 'styled-components';
