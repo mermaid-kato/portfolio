@@ -1,6 +1,8 @@
 build:
 	docker compose build
 
+setup:
+	docker compose run --rm backend rails db:create
+
 up:
-	docker compose run --rm backend sh -c "bundle install"
 	docker compose up

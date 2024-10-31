@@ -1,95 +1,28 @@
 import styled from 'styled-components';
-import axios from 'axios'
 import { useEffect, useState } from 'react';
 
 
 export const Careers = () => {
   const [userData, setUserData] = useState([ { year: null, title: null }]);
-  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/career', {
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          withCredentials: true,
-        });
-        setUserData(response.data);
-      } catch (error) {
-        console.error('データの取得に失敗しました:', error);
-      }
+      fetch('http://localhost:3001/career', {
+        method: "GET",
+        mode: 'cors',
+        credentials: "same-origin",
+        headers: {
+          'Content-Type': 'application/json',
+          "credentials": "include"
+        }
+      })
+      .then(response => response.json())
+      .then(data => setUserData(data))
+      .catch(error => console.error(error));
     };
 
     fetchData();
   }, []);
-
-  const careerItems: { year: string, title: string }[] = [
-    {
-      year: "2000年",
-      title: "xxxプロジェクトに従事"
-    },
-    {
-      year: "2001年",
-      title: "xxxプロジェクトに従事"
-    },
-    {
-      year: "2002年",
-      title: "テストプロジェクトに従事"
-    },
-    {
-      year: "2003年",
-      title: "xxxプロジェクトに従事"
-    },
-    {
-      year: "2004年",
-      title: "ECサイトの設計・開発"
-    },
-    {
-      year: "2005年",
-      title: "ECサイトの設計・開発"
-    },
-    {
-      year: "2006年",
-      title: "施設予約プロジェクト"
-    },
-    {
-      year: "2007年",
-      title: "AWSの構築作業"
-    }
-  ];
-  //   {
-  //     year: "2000年",
-  //     title: "xxxプロジェクトに従事"
-  //   },
-  //   {
-  //     year: "2001年",
-  //     title: "xxxプロジェクトに従事"
-  //   },
-  //   {
-  //     year: "2002年",
-  //     title: "テストプロジェクトに従事"
-  //   },
-  //   {
-  //     year: "2003年",
-  //     title: "xxxプロジェクトに従事"
-  //   },
-  //   {
-  //     year: "2004年",
-  //     title: "ECサイトの設計・開発"
-  //   },
-  //   {
-  //     year: "2005年",
-  //     title: "ECサイトの設計・開発"
-  //   },
-  //   {
-  //     year: "2006年",
-  //     title: "施設予約プロジェクト"
-  //   },
-  //   {
-  //     year: "2007年",
-  //     title: "AWSの構築作業"
-  //   }
-  // ];
 
   return (
     <AppCareer>
@@ -97,7 +30,7 @@ export const Careers = () => {
       <CareerGroup>
       <>
         {
-          careerItems.map((career) => {
+          userData.map((career) => {
             return <CareerPj>{career.year}：{career.title}</CareerPj>
           })
         }

@@ -1,2 +1,2 @@
-FROM node:14.17.1-alpine
-WORKDIR /usr/src/app
+FROM node:18.7.0-alpine3.16
+WORKDIR /frontend
