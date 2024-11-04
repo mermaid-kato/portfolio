@@ -3,11 +3,11 @@ class CareerController < ApplicationController
     careers = [
       {
         year: "2000年",
-        title: "xxxプロジェクトに従事"
+        title: "銀行システムの構築"
       },
       {
         year: "2001年",
-        title: "xxxプロジェクトに従事"
+        title: "銀行の預金口座作成システム"
       },
       {
         year: "2002年",
@@ -15,7 +15,7 @@ class CareerController < ApplicationController
       },
       {
         year: "2003年",
-        title: "xxxプロジェクトに従事"
+        title: "ゲームの設計・開発"
       },
       {
         year: "2004年",
